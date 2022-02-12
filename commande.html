@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurant| menu</title>
+    <link rel="shortcut fav icon " href="img/fish/fish-tomato.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="restaurant.css">
+    <link rel="stylesheet" href="Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="menu.css">
+    
+</head>
+<style>
+   /* ul .link1 #list{
+        display: none;
+   }
+   ul .link1:hover #list ul{
+        display: block;
+   } */
+   .link2 li{
+       background: #000;
+       padding-left: 1rem;
+       padding-bottom: 2rem;
+        width: 20rem;
+        box-shadow: 0 0 17px rgba(0, 0, 0,15);
+   }
+    ul li ul{
+        display: none;
+        background: #000;
+        position: absolute;
+        width: 15rem;
+        padding-left: 0.5rem;
+        cursor: pointer;
+        list-style: none;
+        font-size: 20px;
+        height: 50px;
+       
+
+    }
+    ul li ul li a:hover{
+        color: rgb(62, 143, 214);
+        
+    }
+    .fa-apple-alt, .fa-utensils, .fa-fish, .fa-hamburger{
+        border: 1px solid white;
+        border-radius: 4px;
+        padding: 5px;
+        font-size: 30px;
+    }
+    ul li:hover ul{
+        display: block;
+    }
+</style>
+<body>
+    <nav>
+        <a href="restaurant.html"> <h1>B-Restaurant</h1></a>
+        <div class="onglets">
+
+            <p class="link"><a href="restaurant.html">ACCUEIL</a></p>
+
+            <!-- <ul>
+            <li class="link2"><a href="menu.html">RESTAURATION <i class="fas fa-sort-down"></i> </a>
+                <ul>
+                    <li> <a href="alima-rix.html"><i class="fas fa-hamburger"></i> CAFE</a></li>
+                    <li><a href="#"> <i class="fas fa-apple-alt"></i> NUTRITION </a></li>
+                    <li> <a href="#"><i class="fas fa-utensils"></i> REPAS ET CONDIMANT </a></li>
+                    <li><a href="#"> <i class="fas fa-fish"></i> RIZ ET CONDIMANT </a></li>
+                </ul>
+            
+            </li>
+
+            </ul> -->
+            <p class="link"> <a href="nutrition.html"> NUTRITION </a></p>
+            <p class="link"><a href="menuchoix.html">MENU</p></a>
+            <p class="link" onclick="affiche()"><a href="#">LIVRAISON</a></p>
+    
+            <form action="post">
+                <input type="search" placeholder="rechercher">
+            </form>
+            <p><i class="fas fa-heart"></i></p>
+            <p><i class="fas fa-shopping-cart"></i></p>
+        </div>
+    </nav>
+    <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123 movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">add google map to my website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div> -->
+
+    <!-- <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=bujumbura&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+
+            </iframe>
+            <a href="https://123movies-to.org">123 movies</a><br>
+            <style>.mapouter{
+                position:relative;
+                text-align:right;
+                height:500px;
+                width:600px;}
+            </style>
+            <a href="https://www.embedgooglemap.net">add google map to my website</a>
+            <style>
+            .gmap_canvas{
+                overflow:hidden;
+                background:none!important;
+                height:500px;
+                width:600px;}
+            </style>
+            </div>
+        </div> -->
+       
+
+     <div class="general-livraison" id="livraison">
+         <span class="btn btn-danger" id="span" onclick="cache()">X</span>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31863.745971078806!2d29.34231058921041!3d-3.357923951402109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c183b1280b3313%3A0x1e6139d981494c06!2sNgagara%2C%20Bujumbura!5e0!3m2!1sfr!2sbi!4v1638650359610!5m2!1sfr!2sbi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <form action="post" class="contro-fluid">
+            
+            <label for="ville">localisation</label><br>
+            <input type="text" id="ville" class="form-control" placeholder="le nom de ville ex.bujumbura" required><br>
+            
+            <label for="produit">Select Produit name</label><br>
+                <select name="choix" id="select-produit" class="form-control" required>
+                    <optgroup title="choix liste"> nom produit
+                        <option value="CAFE">CAFE</option>
+                        <option value="nutrition">NUTRITION</option>
+                        <option value="food">FOOD and MEAT</option>
+                        <option value="rice">RICE and MEAT</option>
+                    </optgroup>
+                </select>
+        
+            <button type="submit" class="btn btn-primary">Suivant</button>
+         </div>
+        </form>
+    </div>
+        <style>
+            .general-livraison{
+                display: none;
+                margin: 30px auto;
+                background: transparent;
+                width: 80%;
+                box-shadow: 0 0 15px rgba(0, 0, 0,15);
+                padding: 1rem;
+                margin-top: 1rem;
+                
+            }
+           .contro-fluid label{
+               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-size: 16px;
+           }
+            .contro-fluid{
+                position: absolute;
+                right:-8rem;
+                top: 20rem;
+                display: block;
+                width: 50%;
+            }
+           .contro-fluid input{
+               width: 50%;
+           }
+           .contro-fluid select{
+               width: 50%;
+           }
+           .contro-fluid button{
+               margin-left: 5rem;
+               width: 10rem;
+           }
+           
+           #livraison span{
+            padding: 15px;
+            font-size: 0.5rem;
+            width: max-content;
+            position: absolute;
+            top: 11rem;
+             right: 8.4rem;
+             z-index: 2;
+           }
+           
+            option:hover{
+                border-bottom: 1rem solid white;
+                background: violet;
+            }
+            button{
+                margin-top: 2rem;
+                height: max-content;
+                margin-left: 1rem;
+            }
+            
+        </style>
+    <!-- <ul>
+        <li class="link2"><a href="menu.html">RESTAURATION <i class="fas fa-sort-down"></i> </a>
+            <ul>
+                <li> <a href="alima-rix.html"><i class="fas fa-hamburger"></i> CAFE</a></li>
+                <li><a href="#"> <i class="fas fa-apple-alt"></i> NUTRITION </a></li>
+                <li> <a href="#"><i class="fas fa-utensils"></i> REPAS ET CONDIMANT </a></li>
+                <li><a href="#"> <i class="fas fa-fish"></i> RIZ ET CONDIMANT </a></li>
+            </ul>
+        
+        </li>
+
+        </ul> -->
+
+<!-- <div class="container-fluid" id="contanir-form">
+    
+    <form action="post" class="entre" onclick="hide()">
+        <span class="btn btn-danger">X</span>
+        <h2>Remplissez</h2>         
+        <label class="text-center" for="name-food">Numero du Repas</label>
+        <input type="number" id="name-food" required  minlength="2" aria-rowspan="5" placeholder="ex: 2">
+        <label for="price" class="text-center">Le montant</label>
+        <input type="number" name="prix" id="price" required>
+    
+        <label for="number-site" class="text-center">Numero de votre Table</label>
+        <input type="number" name="nomre" id="number-site" class="well" required placeholder="entre le numero de votre table">
+        <div class="row">
+            <div class="col-xs-4">
+        <button type="reset" class="btn btn-default btn-danger">Annuler</button>
+        </div>
+        <div class="col-xs-4">
+        <button type="submit" class="btn btn-default btn-primary">Demandez</button>
+    </div>
+    </div>
+    </form>
+</div> -->
+<script>
+    function affiche(){
+        let affiche = document.getElementById("livraison");
+            affiche.style.display="block"
+    }
+    function cache(){
+        let cache = document.getElementById("livraison");
+            cache.style.display="none"
+    }
+    // function restaurant(){
+    //     let list = document.getElementById("list");
+    //         list.style.display="block"
+    // }
+</script>
+    <script src="js/all.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+/* pour le bar de menu
+body{
+  display:grid;
+  place-items:center;
+  height:100vh;
+  background:#4C23E8;
+  margin:0;
+  padding:0;
+}
+
+label{
+ display:flex;
+  flex-direction:column;
+  width:70px;
+  cursor:pointer;
+}
+
+label span{
+  background: #fff;
+  border-radius:10px;
+  height:7px;
+  margin: 7px 0;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+}
+
+
+span:nth-of-type(1){
+  width:50%;
+  
+}
+
+span:nth-of-type(2){
+  width:100%;
+}
+
+
+span:nth-of-type(3){
+  width:75%;
+ 
+}
+
+
+input[type="checkbox"]{
+  display:none;
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(1){
+  transform-origin:bottom;
+  transform:rotatez(45deg) translate(8px,0px)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(2){
+  
+  transform-origin:top;
+  transform:rotatez(-45deg)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(3){
+  
+  transform-origin:bottom;
+  width:50%;
+  transform: translate(30px,-11px) rotatez(45deg);
+
+} fini*/
+
+
+
+
+    /* html, cece est de faire passe le text dans 3d
+body {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: navajowhite;
+}
+
+.box {
+	display: flex;
+}
+
+.box .inner {
+	width: 400px;
+	height: 200px;
+	line-height: 200px;
+	font-size: 4em;
+	font-family: sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.box .inner:first-child {
+	background-color: indianred;
+	color: rgb(122, 120, 120);
+	transform-origin: right;
+	transform: perspective(100px) rotateY(-15deg);
+}
+
+.box .inner:last-child {
+	background-color: lightcoral;
+	color: antiquewhite;
+	transform-origin: left;
+	transform: perspective(100px) rotateY(15deg);
+}
+
+.box .inner span {
+	position: absolute;
+	animation: marquee 5s linear infinite;
+}
+
+.box .inner:first-child span {
+	animation-delay: 2.5s;
+	left: -100%;
+}
+
+@keyframes marquee {
+	from {
+		left: 100%;
+	}
+
+	to {
+		left: -100%;
+	}
+} */
+
+/* pour mettre le croix a l'element de bar de menu
+body {
+  background: dodgerblue;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 50px;
+}
+
+.center:before,
+.center:after,
+.center div {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+.center:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.center:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.center:hover div {
+  transform: scale(0);
+}
+fini */
+
+
+/* compte a rebour
+
+{
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--hue: 223;
+	--bg1: hsl(var(--hue),10%,90%);
+	--bg2: hsl(var(--hue),10%,100%);
+	--fg1: hsl(var(--hue),10%,10%);
+	--fg2: hsl(var(--hue),10%,30%);
+	--primary1: hsl(var(--hue),90%,45%);
+	--primary2: hsl(var(--hue),90%,55%);
+	--primary3: hsl(var(--hue),90%,65%);
+	--primary4: hsl(var(--hue),90%,75%);
+	--primary5: hsl(var(--hue),90%,85%);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body, button {
+	font: 1em/1.5 Hind, sans-serif;
+}
+body {
+	background: var(--bg1);
+	color: var(--fg1);
+}
+a {
+	color: var(--primary2);
+}
+a:not(:hover) {
+	text-decoration: none;
+}
+a:active {
+	color: var(--primary1);
+}
+a:visited {
+	color: var(--primary3);
+}
+h1 {
+	font-size: 2em;
+	margin: 0 0 1.5rem;
+	text-align: center;
+}
+h2 {
+	font-size: 1.5em;
+	line-height: 1;
+	margin: 0 0 0.75rem;
+	padding-top: 0.75rem;
+}
+p {
+	margin: 0 0 1.5em;
+}
+footer {
+	font-size: 0.75em;
+	padding: 1.5em;
+	text-align: center;
+}
+.intro__headline,
+.intro__subheadline,
+.cd__digits,
+.cd__unit-label,
+.cd__progress {
+	font-family: Inconsolata, monospace;
+}
+.intro {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+	min-height: 19.5em;
+	padding: 1.5em;
+}
+.intro__headline {
+	font-size: 3em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+.intro__subheadline {
+	color: var(--fg2);
+	text-align: center;
+}
+.cd,
+.cd__unit-group,
+.cd__digits {
+	display: flex;
+	justify-content: center;
+}
+.cd {
+	flex-wrap: wrap;
+	text-align: center;
+}
+.cd__unit-group {
+	margin-bottom: 1.5em;
+}
+.cd__unit {
+	font-size: 3.75em;
+	line-height: 1;
+	margin: 0 0.75rem;
+	width: 2ch;
+}
+.cd__digits,
+.cd__digit {
+	position: relative;
+}
+.cd__digits {
+	box-shadow:
+		0 0.1em 0.05em var(--bg1) inset,
+		0 -0.1em 0.05em var(--bg1) inset;
+	font-weight: bold;
+	height: 3.75rem;
+	margin-bottom: 0.5rem;
+	overflow: hidden;
+}
+.cd__digit {
+	width: 1ch;
+	z-index: -1;
+}
+.cd__digit--roll-in {
+	animation: rollIn 0.5s ease-in-out;
+}
+.cd__next-digit-fade {
+	animation: fade 0.5s ease-in-out;
+}
+.cd__prev-digit-fade {
+	animation: fade 0.5s ease-in-out reverse;
+}
+.cd__unit-label {
+	color: var(--fg2);
+	font-size: 0.75rem;
+	line-height: 1;
+}
+.cd__progress {
+	width: 100%;
+}
+.btn {
+	background: var(--primary2);
+	border-radius: 50%;
+	color: #fff;
+	position: fixed;
+	right: 1.5em;
+	bottom: 1.5em;
+	text-align: center;
+	width: 2.25em;
+	height: 2.25em;
+	transition: background-color 0.15s linear;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.btn:focus,
+.btn:hover {
+	background-color: var(--primary1);
+}
+.btn__text {
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+	height: 100%;
+	padding-top: 0.125rem;
+}
+.content {
+	background: var(--bg2);
+}
+.content__wrap {
+	margin: auto;
+	padding: 3em 1.5em 1.5em;
+	max-width: 32em;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg1: hsl(var(--hue),10%,10%);
+		--bg2: hsl(var(--hue),10%,20%);
+		--fg1: hsl(var(--hue),10%,90%);
+		--fg2: hsl(var(--hue),10%,70%);
+	}
+	a {
+		color: var(--primary3);
+	}
+	a:active {
+		color: var(--primary2);
+	}
+	a:visited {
+		color: var(--primary4);
+	}
+}
+
+/* Animations */
+@keyframes rollIn {
+	from { transform: translateY(-100%); }
+	to { transform: translateY(0); }
+}
+@keyframes fade {
+	from { opacity: 0; }
+	to { opacity: 1; }
+} */
+
+</style>
+<body>
+
+  compte a rebour
+  <main>
+    <div class="intro">
+      <h1 class="intro__headline">The Unix Epochalypse</h1>
+      <p class="intro__subheadline">Happening In</p>
+      <div class="cd">
+        <div class="cd__unit-group">
+          <div class="cd__unit">
+            <div class="cd__digits">
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+            </div>
+            <div class="cd__unit-label">Year(s)</div>
+          </div>
+          <div class="cd__unit">
+            <div class="cd__digits">
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+            </div>
+            <div class="cd__unit-label">Month(s)</div>
+          </div>
+          <div class="cd__unit">
+            <div class="cd__digits">
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+            </div>
+            <div class="cd__unit-label">Day(s)</div>
+          </div>
+        </div>
+        <div class="cd__unit-group">
+          <div class="cd__unit">
+            <div class="cd__digits">
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+            </div>
+            <div class="cd__unit-label">Hour(s)</div>
+          </div>
+          <div class="cd__unit">
+            <div class="cd__digits">
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+            </div>
+            <div class="cd__unit-label">Minute(s)</div>
+          </div>
+          <div class="cd__unit">
+            <div class="cd__digits">
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+              <div class="cd__digit" data-col>
+                <div data-pos="next">-</div>
+                <div data-pos="prev">-</div>
+              </div>
+            </div>
+            <div class="cd__unit-label">Second(s)</div>
+          </div>
+        </div>
+        <div class="cd__progress">
+          <span class="cd__unit-label">Seconds Since Unix Epoch</span><br>
+          <strong data-progress>-</strong>
+        </div>
+      </div>
+      <button id="info-btn" class="btn" type="button">
+        <span class="btn__text">?</span>
+      </button>
+    </div>
+    <div id="info" class="content">
+      <div class="content__wrap">
+        <h2>What’s the Unix Epochalypse?</h2>
+        <p>The Unix Epochalypse (or the <a href="https://en.wikipedia.org/wiki/Year_2038_problem" target="_blank" ref="noopener noreferrer">Year 2038 problem</a>) is the day clocks on a number of systems will flip from <strong><time datetime="2038-01-19 03:14:08">January 19, 2038 3:14:08 AM UTC</time></strong> to <strong><time datetime="1901-12-13 20:45:52">December 13, 1901 8:45:52 PM UTC</time></strong>. This is because of the use of a 32-bit signed integer for the current seconds since midnight UTC on <time datetime="1970-01-01 00:00:00">January 1, 1970</time>, the Unix epoch. Values only from -2,147,483,648 to 2,147,483,647 are stored. When finally reaching the limit, it’ll be the seconds before the epoch starting at the lowest supported integer.</p>
+        <p>If you have yet to make the complete shift to 64-bit, expect some strange things to happen later. The age of 32-bit is over. The time of 64-bit has come!</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Made by <a href="https://twitter.com/jonkantner" target="_blank">@jonkantner</a>
+  </footer>
+
+
+  
+    <!-- croix
+    <div class="center">
+        <div></div>
+      </div> -->
+    
+    <!-- <div class="box"> pour text en 3d
+        <div class="inner">
+          <span>Hello World</span>
+        </div>
+        <div class="inner">
+          <span>Hello World</span>
+        </div>
+      </div> -->
+
+      <!-- pour le bars de menu
+      <label for="check">
+        <input type="checkbox" id="check"/> 
+        <span></span>
+        <span></span>
+        <span></span>
+      </label> -->
+
+
+	  <div onclick="changecolor(this)" style="padding: 30px; color: red;">
+		hello world
+	</div>
+
+      <script>
+		  function changecolor(vent){
+
+			  var currentColor = vent.style.color;
+			  if(currentColor=="red"){
+				  vent.style.color="blue";
+				 
+			  }
+			  else if(currentColor=="blue"){
+				  vent.style.color="black";
+			  }
+			  else if(currentColor=="black"){
+				  vent.style.color="white";
+			  }
+			  else if(currentColor=="white"){
+				  vent.style.color="red"
+			  }
+		  }
+        window.addEventListener("DOMContentLoaded",() => {
+	const uec = new UnixEpochalypseCountdown(".cd");
+	const infoBtn = document.getElementById("info-btn");
+
+	if (infoBtn)
+		infoBtn.addEventListener("click",jumpToHelp);
+});
+
+function jumpToHelp() {
+	const info = document.getElementById("info");
+
+	if (info) {
+		window.scrollTo({
+			top: info.offsetTop,
+			left: 0,
+			behavior: "smooth"
+		});
+	}
+}
+
+class UnixEpochalypseCountdown {
+	constructor(qs) {
+		this.el = document.querySelector(qs);
+		this.time = [];
+		this.animTimeout = null;
+		this.updateTimeout = null;
+		this.update();
+	}
+	getProgressInSeconds() {
+		if (typeof moment === "function") {
+			const now = moment();
+			const ms = Math.ceil(now.valueOf() / 1e3);
+
+			return ms >> 0;
+		} else {
+			return 0;
+		}
+	}
+	getTimeLeft() {
+		let timeLeft = {
+			y: 0,
+			mo: 0,
+			d: 0,
+			h: 0,
+			m: 0,
+			s: 0
+		};
+
+		if (typeof moment === "function") {
+			const later = moment((2**31 - 1) * 1e3);
+			const now = moment();
+			const diff = moment.duration(later.diff(now));
+
+			if (diff.valueOf() >= 0) {
+				timeLeft.y += diff.years();
+				timeLeft.mo += diff.months();
+				timeLeft.d += diff.days();
+				timeLeft.h += diff.hours();
+				timeLeft.m += diff.minutes();
+				timeLeft.s += diff.seconds();
+			}
+		}
+
+		return timeLeft;
+	}
+	clearAnimations() {
+		if (this.el) {
+			const colAnimsToClear = this.el.querySelectorAll("[data-col]");
+
+			Array.from(colAnimsToClear).forEach(a => {
+				a.classList.remove("cd__digit--roll-in");
+			});
+
+			const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
+
+			Array.from(posAnimsToClear).forEach(a => {
+				a.classList.remove("cd__next-digit-fade","cd__prev-digit-fade");
+			});
+		}
+	}
+	update(doAnimations = false) {
+		// start with all dashes
+		if (!this.time.length) {
+			let digitCount = 12;
+
+			while (digitCount--)
+				this.time.push("-");
+		}
+		// update data
+		const display = this.getTimeLeft();
+		const displayDigits = [];
+
+		for (let v in display) {
+			const digits = `${display[v]}`.split("");
+			// add zero to single digits
+			if (digits.length < 2)
+				digits.unshift("0");
+
+			displayDigits.push(...digits);
+		}
+		// update display
+		const cols = this.el.querySelectorAll("[data-col]");
+
+		if (cols) {
+			Array.from(cols).forEach((c,i) => {
+				const digit = displayDigits[i];
+
+				if (digit !== this.time[i]) {
+					const next = c.querySelector(`[data-pos="next"]`);
+					const prev = c.querySelector(`[data-pos="prev"]`);
+
+					if (doAnimations === true) {
+						c.classList.add("cd__digit--roll-in");
+						next.classList.add("cd__next-digit-fade");
+						prev.classList.add("cd__prev-digit-fade");
+					}
+
+					next.innerHTML = digit;
+					prev.innerHTML = this.time[i];
+				}
+			});
+		}
+
+		this.time = displayDigits;
+		// progress in seconds
+		const progress = this.el.querySelector("[data-progress]");
+
+		if (progress)
+			progress.innerHTML = this.getProgressInSeconds();
+		// loop
+		clearTimeout(this.animTimeout);
+		this.animTimeout = setTimeout(this.clearAnimations.bind(this),500);
+
+		clearTimeout(this.updateTimeout);
+		this.updateTimeout = setTimeout(this.update.bind(this,true),1e3);
+	}
+}
+      </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurant| menu</title>
+    <link rel="shortcut fav icon " href="img/fish/fish-tomato.png">
+    <link rel="stylesheet" href="Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="restaurant.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+</head>
+ <style>
+ .link li{
+    background-color: var(--background-color);
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+     width: 16rem;
+     box-shadow: var(--box-show-color);
+     list-style: none;
+     
+}
+
+#par{
+    display: none;
+}
+
+</style>
+<body>
+    <ul>
+        <li class="link"  id="ipd"><a href="#"><i class="fas fa-ellipsis-v" title="ouvre le menu"></i></a>
+            <ul id="par" >
+                <li> <a href="#"><i class="fas fa-palette"></i> THEME</a></li>
+                <li><a href="#"> <i class="fas fa-cog"></i>PARAMTRE </a></li>
+                <li> <a href="#"><i class="fas fa-bookmark"></i> note <i fas fa-star></i></a></li>
+                <li><a href="#"> <i class="fas fa-user"></i> APPROPOS </a></li>
+            </ul>
+        
+        </li>
+
+        </ul>
+
+        <script>
+            // function menu(affiches){
+            //     let icon = document.getElementById("par");
+            //         icon.style.display="block";
+            // }
+
+            const element = document.querySelector("#ipd");
+                let par = document.getElementById("par");
+                element.addEventListener("click", () => {
+                    if(par== "none"){
+                        par.style.display="block"
+                    }
+            });
+            //function menu(){
+            //     let icon = document.getElementById("par").style.display;
+            //     if(icon == "none")
+            //     {
+               
+            //         icon.style.display="block"
+            //     }
+            //     else if(icon=="block")
+            //     {
+            //         icon.style.display="none"
+            //     }
+            // }
+        </script>
+
+    <!-- <script src="toutjs.js"></script>
+    <script src="restaurant.js"></script> -->
+    <script src="js/all.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+</body>
+</html>

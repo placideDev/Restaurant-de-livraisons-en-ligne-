@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="shortcut fav icon " href="img/fish/fish-tomato.png">
+    <link rel="stylesheet" href="Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="restaurant.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+</head>
+ <style>
+    
+
+</style>
+<body>
+    <nav>
+        <a href="restaurant.html"><h1>B-Restaurant</h1></a>
+        <div class="onglets">
+            <p class="link4"><a href="restaurant.html">ACCUEIL</a></p>
+            <!-- <p class="link"><a href="menu.html">RESTAURATION</a></p> -->
+
+            <ul id="nutri">
+                <li class="link2"><a href="menu.html">RESTAURATION <i class="fas fa-sort-down"></i> </a>
+                    <ul id="sous">
+                        <li> <a href="cafe.html"><i class="fas fa-hamburger"></i> CAFE</a></li>
+                        <li><a href="nutrition.html"> <i class="fas fa-apple-alt"></i> NUTRITION </a></li>
+                        <li> <a href="food.html"><i class="fas fa-utensils"></i> REPAS ET CONDIMANT </a></li>
+                        <li><a href="alima-rix.html"> <i class="fas fa-fish"></i> RIZ ET CONDIMANT </a></li>
+                    </ul>
+                
+                </li>
+    
+                </ul>
+
+
+           
+            <p class="link"><a href="menuchoix.html">MENU</p></a>
+            <p class="link" onclick="affiche()"><a href="#">LIVRAISON</a></p>
+    
+    
+            <form action="post">
+                <input class="input" type="search" placeholder="rechercher">
+            </form>
+            <p onclick="heart(this)" style="color: white; "><i id="heart" class="fas fa-heart"></i></p>
+            <p onclick="shopping()"><i id="shopping" class="fas fa-shopping-cart"></i></p>
+        </div>
+
+    </nav>
+    <div class="general-livraison" id="livraison">
+        <span class="btn btn-danger" id="span" onclick="cache()">X</span>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31863.745971078806!2d29.34231058921041!3d-3.357923951402109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c183b1280b3313%3A0x1e6139d981494c06!2sNgagara%2C%20Bujumbura!5e0!3m2!1sfr!2sbi!4v1638650359610!5m2!1sfr!2sbi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+       <form action="post" class="contro-fluid">
+           
+           <label for="ville">localisation</label><br>
+           <input type="text" id="ville" class="form-control" placeholder="le nom de ville ex.bujumbura" required><br>
+           
+           <label for="produit">Select Produit name</label><br>
+               <select name="choix" id="select-produit" class="form-control" required>
+                   <optgroup title="choix liste"> nom produit
+                       <option value="CAFE">CAFE</option>
+                       <option value="nutrition">NUTRITION</option>
+                       <option value="food">FOOD and MEAT</option>
+                       <option value="rice">RICE and MEAT</option>
+                   </optgroup>
+               </select>
+       
+           <button type="submit" class="btn btn-primary">Suivant</button>
+        </div>
+       </form>
+   </div>
+    <!--========= fin de la barre de navigation============ -->
+    
+    <!-- ====header -->
+     <!-- slide images start -->
+
+     <div class="slider">
+
+        <div class="slides">
+          <!-- radios buttons start -->
+          <input type="radio" name="radio-btn" id="radio1" >
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+         
+
+          <!-- radio buttons end -->
+          <!-- slide images start -->
+
+          <div class="slide first">
+            <img src="img/fish/fish-blanch.jpg">
+
+          </div>
+          <div class="slide">
+             <img src="img/meat/fire-food.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/meat/meat-fruit.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/fruit/best-img.jpeg">
+          </div>
+          <!-- slide images end --> 
+          <!-- automatic navigation start -->
+
+          <div class="navigation-auto">
+            <div class="auto-btn1">
+              
+            </div>
+
+            <div class="auto-btn2">
+              
+            </div>
+            <div class="auto-btn3">
+              
+            </div>
+            <div class="auto-btn4">
+              
+            </div>
+          </div>
+          <!-- automatic navigation end -->
+
+        </div>
+
+        <!-- manual-navigation start -->
+        <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"> </label>
+
+           <label for="radio2" class="manual-btn"> </label>
+
+            <label for="radio3" class="manual-btn"> </label>
+
+             <label for="radio4" class="manual-btn"> </label>
+        </div>
+    </div>
+         
+    <header>
+        <h1 class="link">C'est votre joie et notre Joie </h1>
+        <button type="submit">Navigateur <i class="fas fa-paper-plane"></i> </button>
+    </header>
+    
+    <!-- fin du header -->
+    
+    <!-- section principale -->
+    
+    <section class="main">
+    
+        <!-- toutes les cartes -->
+    
+            <div class="cards">
+                <div class="card">
+                    <i class="card-t">bonjour</i>
+                    <img class="fis" src="img/fish/fishand chip.jpg" alt="fish and chip"> 
+                    <div class="cardh">
+                                    <h4 class="title">prix</h4>
+                                  <h4 class="title">400fb</h4>
+                                  <h4>like+</h4>
+                    </div>
+                       
+                    <div class="card-header">
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae neque cupiditate excepturi iure? Suscipit possimus quia explicabo consequatur illo ipsum optio! Cum dolor ullam, minima fugiat quidem laudantium nemo quae?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo doloremque quod, corrupti dolore itaque cum nihil voluptate quibusdam consectetur dolor magni iusto adipisci minus, excepturi sint mollitia totam saepe pariatur.
+                        </p> -->
+                       
+                    </div>
+                     <div class="card-body">
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum culpa quod fugiat harum animi quas quibusdam quasi consequuntur! Provident voluptatibus molestiae voluptatem reiciendis rerum quo dolorem qui reprehenderit ad?
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, excepturi repudiandae? Tenetur, neque? Rem voluptas esse, commodi doloribus non vitae, corrupti quibusdam quaerat ab alias, incidunt distinctio ducimus ut ex. plg
+                     </div>
+                </div>
+                <div class="card">
+                    <img src="img/meat/food-meal.jpg" alt="food-meal">
+                        <h4 class="title">prix</h4>
+                        <h4 class="title">5.000fb</h4>
+                        <h4>like+</h4>
+                    <div class="card-header">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto id similique nobis! Deleniti ut aut <br>  em culpa voluptas nostrum expedita ducimus. Numquam natus quibusdam<br> commodi tempora itaque  tempore at error similique.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem iste rerum ut atque consectetur incidunt quisquam necessitatibus quis sequi eveniet. Corporis optio impedit dolores quia assumenda accusantium tempora similique eveniet?
+                    </div>
+                     <div class="card-body">
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, optio, neque molestias corrupti, distinctio magni eos dolore architecto tempore repellat sed quibusdam incidunt ipsa vitae porro! Qui consectetur assumenda eius.
+                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt autem illo repudiandae veritatis consequatur placeat eaque alias totam minus ea iusto, libero minima, error in omnis. Similique tempora iste corrupti.pld
+                     </div>
+                </div>
+                
+            </div>
+    
+        <!-- fin les cartes -->
+    </section>
+    
+    
+    
+    
+    <!-- fin de la section principale -->
+    
+    
+    
+    <!-- toutes les cartes -->
+    <section class="mains">
+    <div class="cards">
+        <div class="card1">
+            <!-- <h2>FOOD</h2> -->
+            <img src="img/cassava/african-Cassava.jpg" alt="veal-food">
+            <div class="card-header2">
+                <h4 class="title">LIKE/COMMANDE</h4>
+                <h4 class="title">4.00FB</h4>
+            </div>
+             <div class="card-body">
+                 <p>Une bonne nourriture avec de sauce a la mode</p>
+             </div>
+        </div>
+        <div class="card1">
+            <img src="img/meat/tablefood.jpg" alt="veal-food-table">
+            <div class="card-header2">
+                <h4 class="title">LIKE/COMMANDE</h4>
+                <h4 class="title">4.500FB</h4>
+            </div>
+             <div class="card-body">
+                 <p>Une bonne nourriture avec de sauce a la mode</p>
+             </div>
+        </div>
+        <div class="card1">
+            <img src="img/rice/cheken plus rice.jpg" alt="cheken and beautiful rice">
+            <div class="card-header2">
+                <h4 class="title">LIKE/COMMANDE</h4>
+                <h4 class="title">4.500FB</h4>
+            </div>
+             <div class="card-body">
+                 <p>Une bonne nourriture avec de sauce a la mode</p>
+             </div>
+        </div>
+
+        <div class="card1">
+            <img src="img/nutrition/menu-as.jpg" alt="cheken and rice">
+            <div class="card-header2">
+                <h4 class="title">LIKE/COMMANDE</h4>
+                <h4 class="title">4.500FB</h4>
+            </div>
+             <div class="card-body">
+                 <p>Une bonne nourriture avec de sauce a la mode</p>
+             </div>
+        </div>
+        <div class="card1">
+            <img src="img/seke/Nouveau dossier/Better-Foods.jpg" alt="the most very beautiful fruit">
+            <div class="card-header2">
+                <h4 class="title">LIKE/COMMANDE</h4>
+                <h4 class="title">4.500FB</h4>
+            </div>
+             <div class="card-body">
+                 <p>Une bonne nourriture avec de sauce a la mode</p>
+             </div>
+        </div>
+        <div class="card1">
+            <img src="img/nutrition/The-Six-Basic-Nutrients-featured-image.png" alt="The-Six-Basic-Nutrients-featured-image">
+            <div class="card-header2">
+                <h4 class="title">LIKE/COMMANDE</h4>
+                <h4 class="title">4.500FB</h4>
+            </div>
+             <div class="card-body">
+                 <p>Une bonne nourriture avec de sauce a la mode</p>
+             </div>
+        </div>
+    </div>
+    
+    <div class="card2">
+        <p>
+            #FASTCASUALINDIA
+           Chez Maiz, nous avons pris l'engagement rapide et décontracté
+          - nous vous servirons des
+           plats cuisinés et frais en moins de 2 minutes.
+
+          Et nous le ferons avec un menu très ciblé,
+         servant une seule cuisine – la Californie mexicaine.
+        </p>
+    </div>
+    </section>
+    <!-- pied de la page -->
+    <footer>
+        <p class="s">&copy; By <i title="placide muhemedi salumu"> &copysr;lacide</i> 2021.12.05<a href="tel:68 352 954"><i class="fas fa-smile"></i></a></p>
+        <div class="social">
+            <p><a href="https://www.facebook.com/salumu.muhemedi.73"> <i class="fab fa-facebook"></i></a></p>
+            <p> <a href="https://twitter.com/messages/compose"><i class="fab fa-twitter"></i></a></p>
+            <p> <a href="https://wa.me/message/A3IWF6VL63THN1"><i class="fab fa-whatsapp"></i></a></p>
+            <p> <a href="mail to:muhemediplacide2011@gmail.com"></a><i class="fas fa-envelope"></i></p>
+        </div>
+    </footer>
+    
+    
+    <!--fin pied de la page -->
+    <script src="toutjs.js"></script>
+    <script src="restaurant.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+</body>
+</html>

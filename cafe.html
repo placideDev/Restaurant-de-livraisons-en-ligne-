@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-Restaurant | LE CAFE</title>
+    <link rel="shortcut fav icon " href="img/fish/fish-tomato.png">
+    <link rel="stylesheet" href="Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="restaurant.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+</head>
+ <style>
+    
+
+</style>
+<body>
+    <nav>
+        <a href="restaurant.html"><h1>B-Restaurant</h1></a>
+        <div class="onglets">
+            <p class="link4"><a href="restaurant.html">ACCUEIL</a></p>
+            <!-- <p class="link"><a href="menu.html">RESTAURATION</a></p> -->
+
+            <ul id="nutri">
+                <li class="link2"><a href="menu.html">RESTAURATION <i class="fas fa-sort-down"></i> </a>
+                    <ul id="sous">
+                        <li> <a href="cafe.html"><i class="fas fa-hamburger"></i> CAFE</a></li>
+                        <li><a href="nutrition.html"> <i class="fas fa-apple-alt"></i> NUTRITION </a></li>
+                        <li> <a href="food.html"><i class="fas fa-utensils"></i> REPAS ET CONDIMANT </a></li>
+                        <li><a href="alima-rix.html"> <i class="fas fa-fish"></i> RIZ ET CONDIMANT </a></li>
+                    </ul>
+                
+                </li>
+    
+                </ul>
+
+
+           
+            <p class="link"><a href="menuchoix.html">MENU</p></a>
+            <p class="link" onclick="affiche()"><a href="#">LIVRAISON</a></p>
+    
+            <form action="post">
+                <input type="search" placeholder="rechercher">
+            </form>
+            <p onclick="heart(this)" style="color: white; "><i id="heart" class="fas fa-heart"></i></p>
+            <p><i class="fas fa-shopping-cart"></i></p>
+        </div>
+        <div class="container-fluid" id="container-form">
+    
+            <form action="post" class="entre">
+                <span class="btn btn-danger" onclick="hide()">X</span>
+            <h2>Remplissez</h2>         
+            <label class="text-center" for="name-food">Numero du Repas</label>
+            <input type="number" id="name-food" required  minlength="2" aria-rowspan="5" placeholder="ex: mentionne le numero etiquette sur l'image">
+            <label for="price" class="text-center">Le Montant</label>
+            <input type="number" name="prix" id="price"  placeholder="entre le montant mentionné sur l'image" required>
+        
+            <label for="number-site" class="text-center">Numero de votre Table</label>
+            <input type="number" name="nomre" id="number-site" class="well" placeholder="entre le Numero de la table que vous etes" required>
+            <div class="row">
+                <div class="col-xs-4">
+            <button type="reset" class="btn btn-default btn-danger">Annuler</button>
+            </div>
+            <div class="col-xs-4">
+            <button type="submit" class="btn btn-default btn-primary">Demandez</button>
+        </div>
+        </div>
+        </form>
+    </div>
+        <div class="general-livraison" id="livraison">
+        <span class="btn btn-danger" id="span" onclick="cache()">X</span>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31863.745971078806!2d29.34231058921041!3d-3.357923951402109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c183b1280b3313%3A0x1e6139d981494c06!2sNgagara%2C%20Bujumbura!5e0!3m2!1sfr!2sbi!4v1638650359610!5m2!1sfr!2sbi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+       <form action="post" class="contro-fluid">
+           
+           <label for="ville">localisation</label><br>
+           <input type="text" id="ville" class="form-control" placeholder="le nom de ville ex.bujumbura" required><br>
+           
+           <label for="produit">Select Produit name</label><br>
+               <select name="choix" id="select-produit" class="form-control" required>
+                   <optgroup title="choix liste"> nom produit
+                       <option value="CAFE">CAFE</option>
+                       <option value="nutrition">NUTRITION</option>
+                       <option value="food">FOOD and MEAT</option>
+                       <option value="rice">RICE and MEAT</option>
+                   </optgroup>
+               </select>
+       
+           <button type="submit" class="btn btn-primary">Suivant</button>
+        </div>
+       </form>
+   </div>
+
+    </nav>
+    <!--========= fin de la barre de navigation============ -->
+    <div class="contaner">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/seke/Nouveau dossier/avocat.jpg" alt="">
+                
+                        <div class="card-text">
+                           <h2> Prix : 4.500fb </h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i> Commandez</h2>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/chekenrice.jpg" alt="">
+                        <div class="card-text">
+                        
+                           <h2>Prix: 12.0s00fb</h2>
+                           <h2 onclick="show()" id="cmd"><i class="fas fa-shopping-cart"></i> Commandez</h2>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/chicken-and-rice-15.jpg" alt="">
+                
+                        <div class="card-text">
+                            <h2>prix : 8.500fb</h2>
+                            <h2>Numero: 4</h2>
+                            <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/Chicken-Fried-Rice.jpg" alt="">
+                
+                        <div class="card-text">
+                            <h2>prix: 7,000fb</h2>
+                            <h2>numero: 5</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/feet and rice.jpg" alt="feet and rice pld">
+                
+                        <div class="card-text">
+                            <h2>prix:65.000fb</h2>
+                            <h2>numero: 6</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/perfect-steamed-rice.jpg" alt="perfect-steamed-rice.pld">
+                
+                        <div class="card-text">
+                            <h2>prix: 5.000fb</h2>
+                            <h2>numero: 7</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/ribest.jpg" alt="rice very best of them placide">
+                
+                        <div class="card-text">
+                            <h2>prix: 85.000fb</h2>
+                            <h2>numero: 8</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/rice and cheken.jpg" alt="rice and cheken pld">
+                
+                        <div class="card-text">
+                            <h2>prix: 7.000fb</h2>
+                            <h2>numero: 9</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/rice only.jpg" alt="the best rice very beautiful pld">
+                
+                        <div class="card-text">
+                            <h2>prix: 45.000fb</h2>
+                            <h2>numero:10</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/rice ta.jpg" alt="rice pld">
+                
+                        <div class="card-text">
+                            <h2>prix: 9.000fb</h2>
+                            <h2>numero: 11</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/rice.jpg" alt="rice nice pld">
+                
+                        <div class="card-text">
+                            <h2>prix: 3.000fb</h2>
+                            <h2>numero: 12</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/tomatche.jpg" alt="rice and tomato pld">
+                
+                        <div class="card-text"><h2>prix: 8.000fb</h2>
+                            <h2>numero: 13</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/wali.jpg" alt="rice and meat pld">
+                
+                        <div class="card-text"><h2>prix:4.500fb</h2>
+                            <h2>numero:14</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/brochette.jpg" alt="brpochette and rice pld">
+                
+                        <div class="card-text"><h2>prix: 6.000fb</h2>
+                            <h2>numero: 15</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/che-fruit.jpeg" alt="che-fruit et rice pld">
+                
+                        <div class="card-text">
+                            <h2>prix:6.000fb</h2>
+                            <h2>numero:16</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/che.jpg" alt="checken pld">
+                
+                        <div class="card-text">
+                            <h2>prix:5.000fb</h2>
+                            <h2>numero:17</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/cheken kwache.jpg" alt="checken and only">
+                
+                        <div class="card-text">
+                            <h2>prix:5.000fb</h2>
+                            <h2>numero:18</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/cheken plus rice.jpg" alt="riz plus poulet pld">
+                
+                        <div class="card-text">
+                            <h2>prix: 8.000fb</h2>
+                            <h2>numero: 19</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/chekenrice.jpg" alt="poulet et le riz pld">
+                
+                        <div class="card-text">
+                            <h2>prix:10.000fb</h2>
+                            <h2>numero:20</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/chicken-and-rice-15.jpg" alt="poulet et le riz le top de 25">
+                
+                        <div class="card-text">
+                            <h2>prix:11.000fb</h2>
+                            <h2>numero:21</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="img/rice/Chicken-Fried-Rice.jpg" alt="poulet et le riz a la table">
+                
+                        <div class="card-text">
+                            <h2>prix: 5.000fb</h2>
+                            <h2>numero: 22</h2>
+                           <h2 onclick="show()" id="cmd"> <i class="fas fa-shopping-cart"></i>commander</h2></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="s">&copy; By <i title="placide muhemedi salumu"> &copysr;lacide </i> 2021.12.05 <i class="fas fa-smile" color="yellow"></i> <a href="tel:68 352 954"></a></p>
+        <div class="social">
+            <p><a href="https://www.facebook.com/salumu.muhemedi.73"> <i class="fab fa-facebook"></i></a></p>
+            <p> <a href="https://twitter.com/messages/compose"><i class="fab fa-twitter"></i></a></p>
+            <p> <a href="https://wa.me/message/A3IWF6VL63THN1"><i class="fab fa-whatsapp"></i></a></p>
+            <p> <a href="mail to:muhemediplacide2011@gmail.com"></a><i class="fas fa-envelope"></i></p>
+        </div>
+    </footer>
+    
+    <script>
+        function show(){
+            let show = document.getElementById("container-form");
+                show.style.display="block";
+                show.style.transition=".9s";
+        }
+        function hide(){
+            let hide = document.getElementById("container-form");
+                hide.style.display="none"
+        }
+    </script>
+    <script src="toutjs.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+</body>
+</html>

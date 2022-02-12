@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age</title>
+</head>
+<body>
+    <form>
+        <label for="nom">entre votre nom</label>
+        <input type="text" id="nom" placeholder="xxxx">
+        <label for="nombre">nombre</label>
+        <input type="number" id="nombre">
+        <button type="submit" id="submit">envoyez</button>
+    </form>
+    <script>
+        document.getElementById("submit").addEventListener("click", function(){
+        var nom = document.getElementById("nom").value;
+            if(nom == "placide" && nombre == 21 ){
+                alert("merci cest bien placide");
+            }
+            else{
+                alert("desole voua n'etes pas connu")}
+        })
+        
+    </script>
+</body>
+</html>
